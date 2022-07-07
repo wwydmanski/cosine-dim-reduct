@@ -5,7 +5,7 @@ import json
 from io import StringIO
 
 DEVICE = "cuda:0"
-model = SentenceTransformer('all-mpnet-base-v2').to(DEVICE)
+model = SentenceTransformer('pritamdeka/S-BioBert-snli-multinli-stsb').to(DEVICE)
 
 
 def _embed2(term, device):
@@ -31,7 +31,7 @@ def prepare_sentences(line):
 
 def save_vectors(vectors):
     vectors = np.array(vectors)
-    np.save("data/vectors.npy", vectors, allow_pickle=False)
+    np.save("data/vectors_biobert.npy", vectors, allow_pickle=False)
     
     try:
         with open("data/meta.txt", "r") as f:
@@ -42,7 +42,7 @@ def save_vectors(vectors):
         prev = -1
         
     current = prev+1
-    with open("data/meta.txt", "a") as f:
+    with open("data/meta_biobert.txt", "a") as f:
         for _ in vectors[::3]:
             f.write(f"{current},anchor\n")
             f.write(f"{current},positive\n")

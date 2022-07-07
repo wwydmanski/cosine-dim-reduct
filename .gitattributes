@@ -1,3 +1,8 @@
 data/marco_small.jsonl filter=lfs diff=lfs merge=lfs -text
 data/meta.txt filter=lfs diff=lfs merge=lfs -text
 data/vectors.npy filter=lfs diff=lfs merge=lfs -text
+models/PCA_64x4.pickle filter=lfs diff=lfs merge=lfs -text
+models/PCA_64x32.pickle filter=lfs diff=lfs merge=lfs -text
+models/PCA_384x96.pickle filter=lfs diff=lfs merge=lfs -text
+models/PCA_384x128.pickle filter=lfs diff=lfs merge=lfs -text
+models/PCA_768x128.pickle filter=lfs diff=lfs merge=lfs -text
